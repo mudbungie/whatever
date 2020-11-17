@@ -3,13 +3,11 @@
 #include "five.h"
 
 void main(){
-    printf("does this print?\n");
-    int five = gimme_five();
-    printf("this is five: %d", five);
-    printf("\n");
+    int x = 5;
+    int *y = &x;
 
-    char a_string[] = "hey, strings are a thing, can they contain %d\n";
-    printf(a_string, 3);
+    printf("x: %d &x: %d *x: can't! y: %d *y: %d &y: %d", x, &x, y, *y, &y);
+    //printf("%d%d", 5, 5);
 
     printf("\n");
 }
