@@ -1,13 +1,33 @@
 #include <stdio.h>
 #include <stdbool.h>
+//#include <random.h>
+#include <stdlib.h>
 #include "five.h"
 
-void main(){
-    int x = 5;
-    int *y = &x;
 
-    printf("x: %d &x: %d *x: can't! y: %d *y: %d &y: %d", x, &x, y, *y, &y);
-    //printf("%d%d", 5, 5);
+struct thing {
+    int x;
+};
+
+struct thing gimme_a_thing(int attribute_value) {
+    struct thing the_thing;
+    the_thing.x = attribute_value;
+    return the_thing;
+}
+
+void main(){
+    struct thing the_thing = gimme_a_thing(2);
+
+    struct thing *thing_address;
+    thing_address = &the_thing;
+
+    printf("%d", the_thing.x);
+    printf("%d", thing_address->x);
+
+    // for (int i = 0; i < 5; i++){
+    //     //printf("%d", thing.x);
+    //     printf("%d", thing);
+    // }
 
     printf("\n");
 }
