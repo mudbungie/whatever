@@ -3,13 +3,13 @@
 import random
 
 class Crime:
-    def __eq__(s, other):
-        return s.__hash__() == other.__hash__()
-    def __hash__(s):
+    def __eq__(self, other):
+        return self.__hash__() == other.__hash__()
+    def __hash__(self):
         return int(10000 * random.random())
-    def __repr__(s):
-        address = super(Crime, s).__repr__()
-        return f'Crime object at location {address} but with hash {s.__hash__()}'
+    def __repr__(self):
+        address = super(Crime, self).__repr__()
+        return f'Crime object at location {address} but with hash {self.__hash__()}'
 
 if __name__ == "__main__":
     crimes = set()
